@@ -1,0 +1,40 @@
+<div class="contextual">
+  <%= form_tag({}, :method => :get) do %>
+  <% end %>
+  <%= render_project_action_links %>
+</div>
+
+<h2><%= @query.new_record? ? l(:label_project_plural) : @query.name %></h2>
+
+<%= form_tag(project_report_path(@project, nil), :method => :get, :id => 'query_form') do %>
+  <%= render :partial => 'project_query/query_form' %>
+<% end %>
+
+<% if @query.valid? %>
+  <% if @entries.empty? %>
+    <p class="nodata"><%= l(:label_no_data) %></p>
+  <% else %>
+    <%= render :partial => 'project_query/'+@query.display_type, :locals => { :entries => @entries }%>
+    <span class="pagination"><%= pagination_links_full @entry_pages, @entry_count %></span>
+  <% end %>
+<% end %>
+
+<% if User.current.logged? %>
+  <p style="text-align:right;">
+    <span class="icon icon-fav my-project"><%= l(:label_my_projects) %></span>
+  </p>
+<% end %>
+
+<% content_for :sidebar do %>
+  <%= render :partial => 'project_query/sidebar' %>
+<% end %>
+
+<% other_formats_links do |f| %>
+  <%= f.link_to 'Atom', :url => {:key => User.current.rss_key} %>
+<% end %>
+
+<% html_title(l(:label_project_plural)) -%>
+
+<% content_for :header_tags do %>
+  <%= stylesheet_link_tag 'style.css', plugin: :sarmad_project_report %>
+<% end %>
