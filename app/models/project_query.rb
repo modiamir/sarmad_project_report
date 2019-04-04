@@ -55,6 +55,7 @@ class ProjectQuery < Query
       :type => :list,
       :values => [[l(:general_text_yes), "1"], [l(:general_text_no), "0"]]
     add_available_filter "created_on", :type => :date_past
+    add_custom_fields_filters(ProjectCustomField.all)
   end
 
   def available_columns
