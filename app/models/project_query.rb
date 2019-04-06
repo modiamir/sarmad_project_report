@@ -26,7 +26,7 @@ class ProjectQuery < Query
     QueryColumn.new(:short_description, :sortable => "#{Project.table_name}.description", :caption => :field_description),
     QueryColumn.new(:homepage, :sortable => "#{Project.table_name}.homepage"),
     QueryColumn.new(:identifier, :sortable => "#{Project.table_name}.identifier"),
-    QueryColumn.new(:parent_id, :sortable => "#{Project.table_name}.lft ASC", :default_order => 'desc', :caption => :field_parent),
+    QueryColumn.new(:parent, :sortable => "#{Project.table_name}.lft ASC", :default_order => 'desc', :caption => :field_parent),
     QueryColumn.new(:is_public, :sortable => "#{Project.table_name}.is_public", :groupable => true),
     QueryColumn.new(:created_on, :sortable => "#{Project.table_name}.created_on", :default_order => 'desc'),
     QueryColumn.new(:spent_budget, :inline => false),
