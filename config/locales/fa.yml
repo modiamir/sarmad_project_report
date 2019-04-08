@@ -1,0 +1,11 @@
+# Farsi strings go here for Rails i18n
+fa:
+  label_display_type: نمایش گزارش
+  label_display_type_list: جدولی
+  label_display_type_board: پیشفرض
+  field_actual_income: درآمد واقعی
+  field_estimated_income: درآمد برآورد شده
+  field_estimated_budget: هزینه برآورد شده
+  field_spent_budget: هزینه محقق شده
+  
+  
