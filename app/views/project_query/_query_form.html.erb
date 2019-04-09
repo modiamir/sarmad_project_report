@@ -12,7 +12,7 @@
     </fieldset>
 
     <% if @query.available_columns.any? %>
-      <fieldset id="options" class="collapsible">
+      <fieldset id="options" class="collapsible collapsed">
         <legend onclick="toggleFieldset(this);"><%= l(:label_options) %></legend>
         <div class="hidden">
           <% if @query.available_display_types.size > 1 %>
