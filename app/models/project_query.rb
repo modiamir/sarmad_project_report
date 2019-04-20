@@ -32,7 +32,10 @@ class ProjectQuery < Query
     QueryColumn.new(:spent_budget, :inline => false),
     QueryColumn.new(:estimated_budget, :inline => false),
     QueryColumn.new(:estimated_income, :inline => false),
-    QueryColumn.new(:actual_income, :inline => false)
+    QueryColumn.new(:actual_income, :inline => false),
+    QueryColumn.new(:time_progress, :inline => false),
+    QueryColumn.new(:actual_progress, :inline => false),
+    QueryColumn.new(:total_estimated_hours, :inline => false)
   ]
 
   def initialize(attributes=nil, *args)
